@@ -1,0 +1,58 @@
+# Node.js dependencies
+/node_modules
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output
+/dist
+/build
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Coverage directory used by testing frameworks
+/coverage
+
+# Temporary files
+*.tmp
+*.temp
+
+# Miscellaneous
+*.log
+*.lock
+*.cache
+
+# Static files (optional, if built automatically)
+static/
+public/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Images (if stored externally or handled via a CDN)
+images/
+
+# Exclude compiled CSS (if you are using a preprocessor like SCSS/SASS)
+*.css.map
+*.scssc
+
+# Local environment settings
+local.env
+*.local

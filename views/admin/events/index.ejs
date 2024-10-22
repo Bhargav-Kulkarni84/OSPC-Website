@@ -1,0 +1,91 @@
+<% layout('./layouts/boilerplate') %>
+
+<div class="container mt-4">
+    <h1>Admin Event Handling</h1>
+
+    <!-- Add New Event Button -->
+    <div class="mb-4">
+        <h3><a href="/admin/addevent" class="btn btn-primary">Add a New Event</a></h3>
+    </div>
+
+    <!-- Upcoming Events Section -->
+    <section class="mb-5">
+        <h2>Upcoming Events</h2>
+        <% if (events && events.length > 0) { %>
+            <ul class="list-group">
+                <% for (let event of events) { %>
+                    <li class="list-group-item">
+                        <a href="/admin/event/<%= event.id %>" class="event-link"><%= event.Title %></a>
+                        <!-- Uncomment these details if needed -->
+                        <!--
+                        <p><strong>Timing:</strong> <%= event.Timing %></p>
+                        <p><strong>Date:</strong> <%= event.Date %></p>
+                        <p><strong>Seats:</strong> <%= event.Seats %></p>
+                        -->
+                    </li>
+                <% } %>
+            </ul>
+        <% } else { %>
+            <p>No upcoming events at the moment.</p>
+        <% } %>
+    </section>
+
+    <!-- Past Events Section -->
+    <section class="mb-5">
+        <h2>Past Events</h2>
+        <!-- Add past events list here similarly to upcoming events -->
+        <p>No past events to display.</p>
+    </section>
+
+    <!-- Edit Event Section -->
+    <section class="mb-5">
+        <h2>Edit Event</h2>
+        <!-- Add event editing options here -->
+        <p>Select an event to edit.</p>
+    </section>
+</div>
+
+<style>
+    .container {
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    .event-link {
+        text-decoration: none;
+        font-weight: bold;
+        color: #007bff;
+    }
+
+    .event-link:hover {
+        text-decoration: underline;
+    }
+
+    .btn-primary {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    ul.list-group {
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+
+    .list-group-item {
+        padding: 15px;
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .list-group-item:hover {
+        background-color: #f1f1f1;
+    }
+</style>

@@ -1,0 +1,95 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="container mt-4">
+  <h2 class="mb-4">Add a New Event</h2>
+  
+  <form action="/admin/addevent" method="POST" novalidate class="validated-form">
+    <!-- Event Title -->
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="Title" class="form-label">Event Title:</label>
+        <input type="text" class="form-control" id="Title" name="Title" required>
+        <div class="invalid-feedback">Please provide an event title.</div>
+      </div>
+    </div>
+
+    <!-- Image URL -->
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="Image" class="form-label">Image URL:</label>
+        <input type="text" class="form-control" id="Image" name="Image" >
+        <div class="invalid-feedback">Please provide an image URL.</div>
+      </div>
+    </div>
+
+    <!-- Event Date -->
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="Date" class="form-label">Event Date:</label>
+        <input type="date" class="form-control" id="Date" name="Date" required>
+        <div class="invalid-feedback">Please provide a valid date.</div>
+      </div>
+    </div>
+
+    <!-- Event Timing -->
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="Timing" class="form-label">Event Timing:</label>
+        <input type="time" class="form-control" id="Timing" name="Timing" required>
+        <div class="invalid-feedback">Please provide the event timing.</div>
+      </div>
+    </div>
+
+    <!-- Available Seats -->
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="Seats" class="form-label">Available Seats:</label>
+        <input type="number" class="form-control" id="Seats" name="Seats" min="1" required>
+        <div class="invalid-feedback">Please provide the number of available seats.</div>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button class="btn btn-primary" type="submit">Add Event</button>
+  </form>
+</div>
+
+<style>
+  .form-label {
+    font-weight: bold;
+  }
+
+  .container {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-primary {
+    margin-top: 20px;
+  }
+</style>
+
+<!-- <script>
+  // Example JavaScript for enabling validation
+  (function () {
+    'use strict';
+
+    window.addEventListener('load', function () {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('validated-form');
+
+      // Loop over them and prevent submission
+      Array.prototype.filter.call(forms, function (form) {
+        form.addEventListener('submit', function (event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+</script> -->

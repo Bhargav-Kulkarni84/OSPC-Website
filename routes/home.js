@@ -10,4 +10,11 @@ router.get('/home/ospc',(req,res)=>{
     // res.send("Routing Is Working");
     res.render('about_ospc');
 })
+
+router.get('/home/events',(req,res)=>{
+    // res.send("Routing Is Working");
+    res.render('events');
+})
+
+
 module.exports = router;

@@ -7,8 +7,9 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 
 //Routes
-const homeRoutes = require('./routes/home');
+// const homeRoutes = require('./routes/home');
 const adminRoutes = require('./routes/admin');
+const userRoutes = require('./routes/user');
 
 app.engine('ejs',ejsMate);
 app.set('view engine','ejs'); // Will specify the view engine as ejs;
@@ -17,8 +18,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
-app.use('/',homeRoutes);
+// app.use('/',homeRoutes);
 app.use('/admin',adminRoutes);
+app.use('/user',userRoutes);
 
 //Mongo-DB Connection 
 

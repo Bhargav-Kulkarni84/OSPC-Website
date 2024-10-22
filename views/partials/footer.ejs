@@ -34,7 +34,7 @@
     <!-- Section: Social media -->
 
     <!-- Section: Links -->
-    <section class="">
+    <section class="footer-links">
         <div class="container text-center text-md-start mt-5">
             <!-- Grid row -->
             <div class="row mt-3">
@@ -99,14 +99,26 @@
 </footer>
 <!-- Footer -->
 
+<!-- Scoped CSS for Footer -->
 <style>
-    /* Make sure the footer sticks to the bottom */
+    .footer-links {
+        background-color: #f8f9fa;
+        padding-top: 20px;
+    }
+
+    footer {
+        margin-top: auto;
+        background-color: #f1f1f1;
+    }
+
+    /* Ensuring footer stays at the bottom */
     body, html {
         height: 100%;
         display: flex;
         flex-direction: column;
     }
-    footer {
-        margin-top: auto;
+
+    main {
+        flex-grow: 1;
     }
 </style>

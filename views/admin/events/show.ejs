@@ -4,9 +4,13 @@
     <h1><%= event.Title %></h1>
 
     <div class="event-details">
-        <!-- <img src="<%= event.Image %>" alt="Event Image" class="event-image"> -->
+        <% if (event.Image) { %>
+            <img src="<%= event.Image %>" alt="Event Image" class="event-image">
+        <% } else { %>
+            <p>No image available for this event.</p>
+        <% } %>
         <p><strong>Timing:</strong> <%= event.Timing %></p>
-        <p><strong>Date:</strong> <%= event.Date %></p>
+        <p><strong>Date:</strong> <%= event.Date.toLocaleDateString() %></p>
         <p><strong>Available Seats:</strong> <%= event.Seats %></p>
     </div>
 
@@ -22,6 +26,7 @@
 <section class="previous-events">
     <h1>Previous Events</h1>
     <!-- Add your previous event details here -->
+    <p>No previous events to display.</p>
 </section>
 
 <style>
@@ -51,6 +56,8 @@
         padding: 10px 20px;
         border-radius: 5px;
         text-decoration: none;
+        border: none; /* Ensure button style is consistent */
+        cursor: pointer; /* Add pointer cursor for better UX */
     }
 
     .btn-secondary {

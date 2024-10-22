@@ -5,7 +5,9 @@
 
     <!-- Add New Event Button -->
     <div class="mb-4">
-        <h3><a href="/admin/addevent" class="btn btn-primary">Add a New Event</a></h3>
+        <h3>
+            <a href="/admin/addevent" class="btn btn-primary">Add a New Event</a>
+        </h3>
     </div>
 
     <!-- Upcoming Events Section -->
@@ -15,11 +17,11 @@
             <ul class="list-group">
                 <% for (let event of events) { %>
                     <li class="list-group-item">
-                        <a href="/admin/event/<%= event.id %>" class="event-link"><%= event.Title %></a>
+                        <a href="/admin/event/<%= event._id %>" class="event-link"><%= event.Title %></a>
                         <!-- Uncomment these details if needed -->
                         <!--
                         <p><strong>Timing:</strong> <%= event.Timing %></p>
-                        <p><strong>Date:</strong> <%= event.Date %></p>
+                        <p><strong>Date:</strong> <%= event.Date.toLocaleDateString() %></p>
                         <p><strong>Seats:</strong> <%= event.Seats %></p>
                         -->
                     </li>
@@ -33,14 +35,12 @@
     <!-- Past Events Section -->
     <section class="mb-5">
         <h2>Past Events</h2>
-        <!-- Add past events list here similarly to upcoming events -->
         <p>No past events to display.</p>
     </section>
 
     <!-- Edit Event Section -->
     <section class="mb-5">
         <h2>Edit Event</h2>
-        <!-- Add event editing options here -->
         <p>Select an event to edit.</p>
     </section>
 </div>
@@ -48,44 +48,44 @@
 <style>
     .container {
         padding: 20px;
-        background-color: #f8f9fa;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #f8f9fa; /* Light background for contrast */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     }
 
     h1 {
-        margin-bottom: 20px;
+        margin-bottom: 20px; /* Space below the main heading */
     }
 
     .event-link {
-        text-decoration: none;
-        font-weight: bold;
-        color: #007bff;
+        text-decoration: none; /* No underline for links */
+        font-weight: bold; /* Bold text for event titles */
+        color: #007bff; /* Bootstrap primary color */
     }
 
     .event-link:hover {
-        text-decoration: underline;
+        text-decoration: underline; /* Underline on hover for clarity */
     }
 
     .btn-primary {
-        padding: 10px 20px;
-        font-size: 16px;
+        padding: 10px 20px; /* Comfortable padding */
+        font-size: 16px; /* Adequate font size for readability */
     }
 
     ul.list-group {
-        padding-left: 0;
-        margin-bottom: 0;
+        padding-left: 0; /* Remove default padding */
+        margin-bottom: 0; /* Remove bottom margin */
     }
 
     .list-group-item {
-        padding: 15px;
-        background-color: #ffffff;
-        border: 1px solid #ddd;
-        margin-bottom: 10px;
-        border-radius: 5px;
+        padding: 15px; /* Comfortable padding for list items */
+        background-color: #ffffff; /* White background for contrast */
+        border: 1px solid #ddd; /* Light border for definition */
+        margin-bottom: 10px; /* Space between list items */
+        border-radius: 5px; /* Slightly rounded corners */
     }
 
     .list-group-item:hover {
-        background-color: #f1f1f1;
+        background-color: #f1f1f1; /* Light background on hover */
     }
 </style>

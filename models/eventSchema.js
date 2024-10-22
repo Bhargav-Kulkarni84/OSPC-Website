@@ -1,40 +1,51 @@
 const mongoose = require('mongoose');
-const {Schema} = mongoose;
+const { Schema } = mongoose;
 
+// Define the Event schema
 const eventSchema = new Schema({
-    Title:{
-        type:String,
-        require:true
+    // Title of the event (required)
+    Title: {
+        type: String,
+        required: true, // Fixed the typo 'require' to 'required'
     },
-    Image:{
-        type:String,
+    // URL of the event image
+    Image: {
+        type: String,
     },
-    Date:{
-        type:Date,
-        require:true
+    // Date of the event (required)
+    Date: {
+        type: Date,
+        required: true,
     },
-    Seats:{
-        type:Number,
-        require:true
+    // Total number of seats available (required)
+    Seats: {
+        type: Number,
+        required: true,
     },
-    Timing:{
-        type:String,
-        require:true
+    // Timing of the event (required)
+    Timing: {
+        type: String,
+        required: true,
     },
-    Start:{
-        type:String,
-        require:true
+    // Start time of the event (required)
+    Start: {
+        type: String,
+        required: true,
     },
-    End:{
-        type:String,
-        require:true
+    // End time of the event (required)
+    End: {
+        type: String,
+        required: true,
     },
-    Registred:{
-        type:Boolean,
-        required:true
-    }
-})
+    // Registration status (required)
+    Registred: {
+        type: Boolean,
+        required: true,
+    },
+});
 
-const event = mongoose.model('Event',eventSchema);
+// Create the Event model
+const Event = mongoose.model('Event', eventSchema);
 
-module.exports = event;
+// Export the Event model
+module.exports = Event;

@@ -1,10 +1,48 @@
 <% layout('./layouts/boilerplate') %>
 
-<h1>Club Projects will be added since no currently no club projects are available i have added my projects</h1>
+<div class="projects-container">
+    <h1>Club Projects</h1>
+    <p>Currently, there are no club projects available. However, here are some of my personal projects:</p>
 
-<h1>Free Audio Books</h1>
-githublink:https://github.com/Bhargav-Kulkarni84/FreeAudioBooks
+    <div class="project">
+        <h2>Free Audio Books</h2>
+        <p><strong>GitHub Link:</strong> <a href="https://github.com/Bhargav-Kulkarni84/FreeAudioBooks" target="_blank" rel="noopener noreferrer">View Project</a></p>
+    </div>
 
-<h1>Slot Booking System</h1>
-githublink:https://github.com/Bhargav-Kulkarni84/Slot-Booking
+    <div class="project">
+        <h2>Slot Booking System</h2>
+        <p><strong>GitHub Link:</strong> <a href="https://github.com/Bhargav-Kulkarni84/Slot-Booking" target="_blank" rel="noopener noreferrer">View Project</a></p>
+    </div>
+</div>
 
+<style>
+    .projects-container {
+        margin: 20px;
+        padding: 20px;
+        background-color: #f9f9f9; /* Light background for better readability */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    }
+
+    h1 {
+        color: #2980b9; /* Primary color for the title */
+        margin-bottom: 10px;
+    }
+
+    .project {
+        margin-bottom: 20px; /* Space between projects */
+    }
+
+    h2 {
+        color: #2c3e50; /* Darker color for project titles */
+    }
+
+    a {
+        color: #2980b9; /* Link color */
+        text-decoration: none; /* Remove underline */
+    }
+
+    a:hover {
+        text-decoration: underline; /* Underline on hover */
+    }
+</style>

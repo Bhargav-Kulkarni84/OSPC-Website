@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Source Club</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Placeholder for animated text -->
+    <h1 id="transition-text">Let's Go Open Source</h1>
+
+    <!-- Club logo and statement (initially hidden) -->
+    <div id="logo-section" class="hidden">
+      <img src="../images/OSPC logo.jpg" alt="Club Logo" class="logo">
+      <p class="statement">Join us in building the future of technology, one open-source contribution at a time!</p>
+      <a href="/user/home/ospc" class="btn">Learn More About the Club</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  #transition-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    opacity: 1;
+    animation: fadeInOut 4s forwards;
+  }
+  
+  .logo {
+    max-width: 150px;
+    margin-top: 20px;
+  }
+  
+  .statement {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  
+  .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  /* Fade in and out animation for "Let's Go Open Source" text */
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+</style>
+
+<script>
+    // Wait for the animation of the text to finish, then show the logo and statement
+document.addEventListener('DOMContentLoaded', () => {
+  const transitionText = document.getElementById('transition-text');
+  const logoSection = document.getElementById('logo-section');
+
+  // Set a timeout for when the text should disappear and the logo should appear
+  setTimeout(() => {
+    transitionText.style.display = 'none'; // Hide the "Let's Go Open Source" text
+    logoSection.classList.remove('hidden'); // Show the logo and statement
+  }, 4000); // The animation duration matches the 4s from the CSS
+});
+
+</script>

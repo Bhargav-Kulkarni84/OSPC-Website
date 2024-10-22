@@ -4,10 +4,10 @@ const Event = require('../models/eventSchema');
 
 router.get('/events',async(req,res)=>{
     const events = await Event.find({});
-    res.render('./events/index',{events});
+    res.render('./admin/events/index',{events});
 })
 router.get('/addevent',(req,res)=>{
-    res.render('./events/new');
+    res.render('./admin/events/new');
 })
 
 router.post('/addevent',async(req,res)=>{
@@ -26,13 +26,13 @@ router.post('/addevent',async(req,res)=>{
 router.get('/event/:id',async(req,res)=>{
     const {id} = req.params;
     const event = await Event.findById(id);
-    res.render('./events/show',{event});
+    res.render('./admin/events/show',{event});
 })
 
 router.get('/editevent/:id',async(req,res)=>{
     const {id} = req.params;
     const event = await Event.findById(id);
-    res.render('./events/edit',{event});
+    res.render('./admin/events/edit',{event});
 })
 
 router.put('/editevent/:id',async(req,res)=>{
@@ -46,6 +46,4 @@ router.delete('/deleteevent/:id',async(req,res)=>{
     await Event.findByIdAndDelete(id);
     res.redirect(`/admin/events`);
 })
-
-
 module.exports = router;

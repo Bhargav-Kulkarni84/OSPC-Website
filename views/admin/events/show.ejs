@@ -1,0 +1,65 @@
+<% layout('./layouts/boilerplate') %>
+
+<section class="events-section">
+    <h1><%= event.Title %></h1>
+
+    <div class="event-details">
+        <!-- <img src="<%= event.Image %>" alt="Event Image" class="event-image"> -->
+        <p><strong>Timing:</strong> <%= event.Timing %></p>
+        <p><strong>Date:</strong> <%= event.Date %></p>
+        <p><strong>Available Seats:</strong> <%= event.Seats %></p>
+    </div>
+
+    <div class="event-actions">
+        <a href="/admin/editevent/<%= event.id %>" class="btn btn-secondary">Edit Event</a>
+
+        <form action="/admin/deleteevent/<%= event.id %>?_method=DELETE" method="POST" style="display:inline-block;">
+            <button class="btn btn-danger" type="submit">Delete Event</button>
+        </form>
+    </div>
+</section>
+
+<section class="previous-events">
+    <h1>Previous Events</h1>
+    <!-- Add your previous event details here -->
+</section>
+
+<style>
+    .events-section {
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+    }
+
+    .event-details h3 {
+        margin-bottom: 10px;
+    }
+
+    .event-image {
+        width: 100%;
+        max-width: 300px;
+        margin: 10px 0;
+    }
+
+    .event-actions {
+        margin-top: 20px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+    .btn-secondary {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        color: #fff;
+    }
+</style>

@@ -8,10 +8,9 @@ const eventSchema = new Schema({
     },
     Image:{
         type:String,
-        require:true
     },
     Date:{
-        type:String,
+        type:Date,
         require:true
     },
     Seats:{
@@ -21,6 +20,18 @@ const eventSchema = new Schema({
     Timing:{
         type:String,
         require:true
+    },
+    Start:{
+        type:String,
+        require:true
+    },
+    End:{
+        type:String,
+        require:true
+    },
+    Registred:{
+        type:Boolean,
+        required:true
     }
 })
 

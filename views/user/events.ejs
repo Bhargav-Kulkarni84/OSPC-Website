@@ -1,104 +1,160 @@
 <% layout('./layouts/boilerplate') %>
 
 <style>
-    /* Scoped styling for the event layout to avoid interference with other sections */
+    /* Scoped styling for the event layout */
     .event-section {
-        padding: 20px;
+        padding: 40px;
+        background-color: #f3f4f6; /* Light background for the section */
     }
 
     .event {
-        border: 1px solid #ccc;
+        border: 1px solid #ddd;
         margin: 20px;
         padding: 20px;
         width: 300px;
-        float: left;
-        background-color: #f9f9f9; /* Add background to differentiate it from the footer */
+        background-color: #ffffff; /* White background for events */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        transition: transform 0.2s; /* Smooth hover effect */
+    }
+
+    .event:hover {
+        transform: translateY(-4px); /* Lift effect on hover */
     }
 
     .event h3 {
         margin-bottom: 10px;
+        font-size: 1.2em; /* Slightly larger font for titles */
+        color: #333; /* Darker color for text */
     }
 
     .event-placeholder {
         width: 100%;
-        height: 200px; /* Adjust the height based on your preference */
-        background-color: #d3d3d3; /* Light gray background as a placeholder */
+        height: 200px; /* Placeholder height */
+        background-color: #d3d3d3; /* Light gray background for placeholder */
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 16px;
-        color: #555;
         margin-bottom: 10px;
+        border-radius: 8px; /* Rounded corners for the placeholder */
+        overflow: hidden; /* Hide overflow for images */
+    }
+
+    .event-placeholder img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px; /* Rounded corners for images */
+        object-fit: cover; /* Maintain aspect ratio */
     }
 
     .container {
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
+        justify-content: center; /* Center items */
     }
 
-    /* Add a clearfix to make sure containers behave correctly */
-    .container::after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-
-    /* Ensure no interference with global body styles from other components */
     body {
         margin: 0;
+        font-family: Arial, sans-serif; /* Set a readable font */
     }
 
     .event-section h1 {
+        margin-bottom: 30px;
+        text-align: center; /* Center align section titles */
+        color: #2c3e50; /* Darker color for headers */
+    }
+
+    .event p {
+        margin: 10px 0; /* Spacing between paragraphs */
+        color: #555; /* Slightly lighter text color */
+    }
+
+    .event a {
+        display: inline-block;
+        padding: 8px 12px;
+        margin-top: 10px;
+        background-color: #3498db; /* Primary button color */
+        color: #fff; /* White text for contrast */
+        text-decoration: none;
+        border-radius: 4px; /* Rounded button */
+        transition: background-color 0.3s; /* Smooth background transition */
+    }
+
+    .event a:hover {
+        background-color: #2980b9; /* Darker shade on hover */
+    }
+
+    .admin-section {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .admin-section h1 {
         margin-bottom: 20px;
+        color: #2c3e50;
+    }
+
+    .admin-section a {
+        padding: 10px 15px;
+        background-color: #e67e22; /* Admin button color */
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s; /* Smooth background transition */
+    }
+
+    .admin-section a:hover {
+        background-color: #d35400; /* Darker shade on hover */
     }
 </style>
 
 <body>
-
-    <h1>Upcoming Events</h1>
-
-    <% for(let event of events) { %>
-        <% if(new Date(event.Date) > Date.now()) { %> <!-- Correct Date comparison -->
-            <div class="event">
-                <!-- <div class="event-placeholder">
-                    <img src="<%= event.Image %>" alt="Event Image">
-                </div> -->
-                <h3><%= event.Title %></h3>
-                <p>Date: <%= event.Date.toDateString() %></p>
-                <p>Seats Available: <%= event.Seats %></p>
-                <p>Timing: <%= event.Timing %></p>
-                <%if(!event.Registred){ %>
-                <a href="/user/register/<%=event.id %>">Register</a>
+    <div class="event-section">
+        <h1>Upcoming Events</h1>
+        <div class="container">
+            <% for(let event of events) { %>
+                <% if(new Date(event.Date) > Date.now()) { %>
+                    <div class="event">
+                        <div class="event-placeholder">
+                            <img src="<%= event.Image %>" alt="Event Image">
+                        </div>
+                        <h3><%= event.Title %></h3>
+                        <p>Date: <%= new Date(event.Date).toDateString() %></p>
+                        <p>Seats Available: <%= event.Seats %></p>
+                        <p>Timing: <%= event.Timing %></p>
+                        <% if(!event.Registred) { %>
+                            <a href="/user/register/<%=event.id %>">Register</a>
+                        <% } else { %>
+                            <p>Thank You For Registering</p>
+                        <% } %>
+                    </div>
                 <% } %>
-                <%if(event.Registred){ %>
-                    <p>Thank You For Registering</p>
+            <% } %>
+        </div>
+
+        <h1>Our Past Events</h1>
+        <div class="container">
+            <% for(let event of events) { %>
+                <% if(new Date(event.Date) < Date.now()) { %>
+                    <div class="event">
+                        <div class="event-placeholder">
+                            <img src="<%= event.Image %>" alt="Event Image">
+                        </div>
+                        <h3><%= event.Title %></h3>
+                        <p>Date: <%= new Date(event.Date).toDateString() %></p>
+                        <p>Timing: <%= event.Timing %></p>
+                        <p><a href="/user/event/<%=event.id %>">View Details</a></p>
+                    </div>
                 <% } %>
-            </div>
-        <% } %>
-    <% } %>
-    
-    <h1>Our Past Events</h1>
-    
-    <% for(let event of events) { %>
-        <% if(new Date(event.Date) < Date.now()) { %> <!-- Correct Date comparison -->
-            <div class="event">
-                <!-- <div class="event-placeholder">
-                    <img src="<%= event.Image %>" alt="Event Image">
-                </div> -->
-                <h3><%= event.Title %></h3>
-                <p>Date: <%= event.Date.toDateString() %></p>
-                <!-- <p>Seats Available: <%= event.Seats %></p> -->
-                <p>Timing: <%= event.Timing %></p>
-                <p>View Details</p>
-            </div>
-        <% } %>
-    <% } %>
-    
-<h1>If you are a admin </h1>
-<h2>admin route</h2>
-<h3>You will be able to create new event and modify them</h3>
+            <% } %>
+        </div>
+    </div>
 
-<a href="/admin/events">Events Page</a>
-
+    <div class="admin-section">
+        <h1>If you are an admin</h1>
+        <h2>Admin Route</h2>
+        <h3>You will be able to create new events and modify them</h3>
+        <a href="/admin/events">Events Page</a>
+    </div>
 </body>

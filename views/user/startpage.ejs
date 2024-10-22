@@ -14,13 +14,13 @@
 
     <!-- Club logo and statement (initially hidden) -->
     <div id="logo-section" class="hidden">
-      <img src="../images/OSPC logo.jpg" alt="Club Logo" class="logo">
+      <img src="images/OSPC logo.jpg" alt="Open Source Programming Club Logo" class="logo">
       <p class="statement">Join us in building the future of technology, one open-source contribution at a time!</p>
-      <a href="/user/home/ospc" class="btn">Learn More About the Club</a>
+      <a href="/user/home/" class="btn">Learn More About the Club</a>
     </div>
   </div>
-
-  <script src="script.js"></script>
+  
+  <script src="script.js" defer></script>
 </body>
 </html>
 
@@ -29,39 +29,39 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body, html {
+}
+
+body, html {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #f5f5f5;
     font-family: 'Arial', sans-serif;
-  }
-  
-  .container {
+}
+
+.container {
     text-align: center;
-  }
-  
-  #transition-text {
+}
+
+#transition-text {
     font-size: 2.5rem;
     font-weight: bold;
     opacity: 1;
     animation: fadeInOut 4s forwards;
-  }
-  
-  .logo {
+}
+
+.logo {
     max-width: 150px;
     margin-top: 20px;
-  }
-  
-  .statement {
+}
+
+.statement {
     font-size: 1.2rem;
     margin-top: 10px;
-  }
-  
-  .btn {
+}
+
+.btn {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
@@ -70,36 +70,36 @@
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
-  }
-  
-  .btn:hover {
+}
+
+.btn:hover {
     background-color: #0056b3;
-  }
-  
-  .hidden {
+}
+
+.hidden {
     display: none;
-  }
-  
-  /* Fade in and out animation for "Let's Go Open Source" text */
-  @keyframes fadeInOut {
+}
+
+/* Fade in and out animation for "Let's Go Open Source" text */
+@keyframes fadeInOut {
     0% {
-      opacity: 0;
+        opacity: 0;
     }
     20% {
-      opacity: 1;
+        opacity: 1;
     }
     80% {
-      opacity: 1;
+        opacity: 1;
     }
     100% {
-      opacity: 0;
+        opacity: 0;
     }
-  }
+}
 
 </style>
 
 <script>
-    // Wait for the animation of the text to finish, then show the logo and statement
+// Wait for the animation of the text to finish, then show the logo and statement
 document.addEventListener('DOMContentLoaded', () => {
   const transitionText = document.getElementById('transition-text');
   const logoSection = document.getElementById('logo-section');
@@ -110,5 +110,4 @@ document.addEventListener('DOMContentLoaded', () => {
     logoSection.classList.remove('hidden'); // Show the logo and statement
   }, 4000); // The animation duration matches the 4s from the CSS
 });
-
 </script>

@@ -1,13 +1,73 @@
-<form action="/register/<%= event._id %>" method="POST">
-    <label for="username">Username</label>
-    <input type="text" id="username" name="Username" required>
+<form action="/register/<%= event._id %>" method="POST" class="registration-form">
+    <h2>Register for the Event</h2>
+    
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="Username" required>
+    </div>
 
-    <label for="email">Email</label>
-    <input type="email" id="email" name="Email" required>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="Email" required>
+    </div>
 
-    <label for="password">Password</label>
-    <input type="password" id="password" name="Password" required>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="Password" required>
+    </div>
 
     <button type="submit">Confirm</button>
 </form>
 
+<style>
+    .registration-form {
+        max-width: 400px; /* Limit the width of the form */
+        margin: 20px auto; /* Center the form */
+        padding: 20px;
+        border: 1px solid #ccc; /* Border for the form */
+        border-radius: 10px; /* Rounded corners */
+        background-color: #f9f9f9; /* Light background */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+
+    h2 {
+        text-align: center; /* Center align the title */
+        color: #2980b9; /* Title color */
+        margin-bottom: 20px; /* Space below the title */
+    }
+
+    .form-group {
+        margin-bottom: 15px; /* Space between input fields */
+    }
+
+    label {
+        display: block; /* Labels should be block elements */
+        margin-bottom: 5px; /* Space below labels */
+        font-weight: bold; /* Bold labels */
+        color: #333; /* Darker color for labels */
+    }
+
+    input {
+        width: 100%; /* Full width for inputs */
+        padding: 10px; /* Padding inside input fields */
+        border: 1px solid #ccc; /* Border for input fields */
+        border-radius: 5px; /* Rounded corners for inputs */
+        font-size: 16px; /* Font size for inputs */
+    }
+
+    button {
+        width: 100%; /* Full width for the button */
+        padding: 10px; /* Padding inside the button */
+        background-color: #2980b9; /* Button color */
+        color: #fff; /* Button text color */
+        border: none; /* Remove border */
+        border-radius: 5px; /* Rounded corners for button */
+        font-size: 18px; /* Font size for button */
+        cursor: pointer; /* Cursor change on hover */
+        transition: background-color 0.3s ease; /* Transition effect */
+    }
+
+    button:hover {
+        background-color: #3498db; /* Lighter blue on hover */
+    }
+</style>

@@ -18,7 +18,7 @@
     <div class="row mb-3">
       <div class="col-md-6">
         <label for="Image" class="form-label">Image URL:</label>
-        <input type="text" class="form-control" id="Image" name="Image" value="<%= event.Image %>" >
+        <input type="text" class="form-control" id="Image" name="Image" value="<%= event.Image %>">
         <div class="invalid-feedback">Please provide an image URL.</div>
       </div>
     </div>
@@ -27,7 +27,7 @@
     <div class="row mb-3">
       <div class="col-md-6">
         <label for="Date" class="form-label">Event Date:</label>
-        <input type="date" class="form-control" id="Date" name="Date" value="<%= event.Date %>" required>
+        <input type="date" class="form-control" id="Date" name="Date" value="<%= event.Date.toISOString().split('T')[0] %>" required>
         <div class="invalid-feedback">Please provide a valid date.</div>
       </div>
     </div>
@@ -57,25 +57,25 @@
 
 <style>
   .container {
-    background-color: #f8f9fa;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa; /* Light background color for the container */
+    padding: 30px; /* Padding for spacing */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   }
 
   h2 {
-    margin-bottom: 20px;
-    font-weight: bold;
+    margin-bottom: 20px; /* Space below the heading */
+    font-weight: bold; /* Bold font for the heading */
   }
 
   .form-label {
-    font-weight: bold;
+    font-weight: bold; /* Bold font for labels */
   }
 
   .btn-primary {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
+    margin-top: 20px; /* Space above the button */
+    padding: 10px 20px; /* Padding for button */
+    font-size: 16px; /* Font size for button */
   }
 </style>
 
@@ -89,10 +89,10 @@
       Array.prototype.filter.call(forms, function (form) {
         form.addEventListener('submit', function (event) {
           if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
+            event.preventDefault(); // Prevent form submission if invalid
+            event.stopPropagation(); // Stop event from bubbling up
           }
-          form.classList.add('was-validated');
+          form.classList.add('was-validated'); // Add validation class
         }, false);
       });
     }, false);

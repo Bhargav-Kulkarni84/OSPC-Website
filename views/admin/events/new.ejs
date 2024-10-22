@@ -17,7 +17,7 @@
     <div class="row mb-3">
       <div class="col-md-6">
         <label for="Image" class="form-label">Image URL:</label>
-        <input type="text" class="form-control" id="Image" name="Image" >
+        <input type="text" class="form-control" id="Image" name="Image">
         <div class="invalid-feedback">Please provide an image URL.</div>
       </div>
     </div>
@@ -60,19 +60,19 @@
   }
 
   .container {
-    background-color: #f8f9fa;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa; /* Light background for contrast */
+    padding: 30px; /* Adequate padding */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   }
 
   .btn-primary {
-    margin-top: 20px;
+    margin-top: 20px; /* Space above the button */
   }
 </style>
 
-<!-- <script>
-  // Example JavaScript for enabling validation
+<script>
+  // Enable Bootstrap validation styles
   (function () {
     'use strict';
 
@@ -84,12 +84,12 @@
       Array.prototype.filter.call(forms, function (form) {
         form.addEventListener('submit', function (event) {
           if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
+            event.preventDefault(); // Prevent form submission
+            event.stopPropagation(); // Stop the event from bubbling up
           }
-          form.classList.add('was-validated');
+          form.classList.add('was-validated'); // Add Bootstrap validation class
         }, false);
       });
     }, false);
   })();
-</script> -->
+</script>

@@ -1,10 +1,10 @@
 <% layout('./layouts/boilerplate') %>
 
-<div class="header-container">
+<header class="header-container">
     <h1>Open Source Programming Club</h1>
     <!-- logo -->
-    <img src="../images/OSPC logo.jpg" alt="Open Source Programming Club Logo" class="img-fluid">
-</div>
+    <img src="../images/OSPC_logo.jpg" alt="Open Source Programming Club Logo" class="img-fluid">
+</header>
 
 <style>
     .header-container {
@@ -30,6 +30,10 @@
     @media (max-width: 768px) {
         h1 {
             font-size: 28px; /* Smaller font size on smaller screens */
+        }
+
+        .header-container {
+            padding: 30px 10px; /* Adjust padding for smaller screens */
         }
     }
 </style>

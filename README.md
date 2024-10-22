@@ -1,56 +1,50 @@
+# Website Overview
 
-# OSPC Website
+This project is a basic website developed for event management, primarily focused on backend integration. Due to time constraints, I have only implemented the backend functionality for **admin event management**, allowing admins to perform basic CRUD (Create, Read, Update, Delete) operations along with event scheduling.
 
-This website was created for the Open Source Programming Club (OSPC). The primary focus of the website is event management, where admins can perform CRUD operations for scheduling events. **ChatGPT** was used for styling the front end due to time constraints.
+### Styling
+Styling for this website was done with assistance from **ChatGPT**, as there was limited time available for this phase of the project.
 
-## Features
+### Current Limitations
+- The website is **not yet deployed**, and a cloud database connection has not been established.
+- If you wish to run the project locally, you will need to:
+  1. Clone the repository.
+  2. Set up a local database and connect it to the project.
 
-- **Admin Event Management**: Admins can create, update, delete, and schedule events.
-- **CRUD Operations**: Full CRUD functionality for event management.
-- **Backend Integration**: Currently, the backend is integrated only for admin management. User-related event functionalities will be added later.
-- **Basic Frontend**: Placeholder pages for Users and Projects.
+### Features
+- **Admin Dashboard**: Allows admins to manage events with full CRUD functionality and scheduling.
+- **User Visibility**: Users can view events created by the admin.
+- Basic **authentication, authorization**, and **error handling** are placeholders and will be fully implemented in the future.
 
-### Pages Overview
+### Screenshots
 
-Below are the planned sections for screenshots and images:
+#### 1. Starting Page
+![Starting Page 1](./photos/StartingPage1.png)
+![Starting Page 2](./photos/StartingPage2.png)
 
-1. **Starting Page**
-   ![Starting Page](#)
-2. **About Page**
-   ![About Page](#)
-3. **Events Page**
-   ![Events Page](#)
-4. **Users Visibility of the Events**
-   ![Users Visibility](#)
-5. **Admin Routes**
-   ![Admin Routes](#)
-6. **Admin Routes CRUD Operations**
-   ![Admin CRUD Operations](#)
-7. **Projects Page**
-   ![Projects Page](#)
+#### 2. About Page
+![About Page](./photos/AboutPage.png)
 
-## Setup Instructions
+#### 3. Events Page
+![Events Page](./photos/EventsPage.png)
 
-- The website is currently **not deployed**.
-- **Cloud database** is not connected yet. 
-- To try it locally, clone the repository and follow these steps:
-    1. Install dependencies using `npm install`.
-    2. Set up a local database (MongoDB recommended).
-    3. Run the project using `npm start`.
-    4. The backend server will be available at `http://localhost:3000`.
+#### 4. Users' View of Event Registration
+![Event Registration Page](./photos/EventRegistrationPage.png)
 
-### Basic authentication, authorization, and error handling have not yet been implemented. If you want to use it as an admin, you'll need to configure your local setup.
+#### 5. Admin Routes
+![Admin Events Page](./photos/Events Admin Page.png)
 
-## Future Plans
+#### 6. Admin CRUD Operations
+- **New Event Scheduling**
+  ![Admin New Event Scheduling](./photos/AdminNewEventSchedulingPage.png)
+- **Edit Event Scheduling**
+  ![Admin Edit Event Scheduling](./photos/AdminEditEventSchedulingPage.png)
 
-In future updates, I will be:
-- Implementing full **authentication and authorization** for users and admins.
-- **Deploying the website** and connecting it to a cloud-based database.
-- Adding **error handling** and improving security features.
+#### 7. Projects Page
+![Club Projects Page](./photos/ClubProjectsPage.png)
 
-Stay tuned for more updates as I get comfortable with deploying and implementing advanced features.
-
----
-
-**Note**: For any help or contributions, feel free to reach out or submit pull requests. 
-
+### Future Improvements
+In the future, I plan to:
+- Deploy the website to a cloud platform.
+- Connect it to a cloud database.
+- Implement full authentication, authorization, and error handling once I get more comfortable with deployment and these aspects of development.
